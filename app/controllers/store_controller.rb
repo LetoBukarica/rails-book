@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class StoreController < ApplicationController
-  def index
+  include CurrentCart
+  before_action :set_cart
+
+  def index    
     @products = Product.order(:title)
     if [0, nil].include?(session[:access_counter])
       session[:access_counter] = 1

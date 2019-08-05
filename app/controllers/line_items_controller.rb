@@ -30,10 +30,10 @@ class LineItemsController < ApplicationController
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product)
     session[:access_counter] = 0
-
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_index_url }
+        format.js { @current_item = @line_item }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -59,9 +59,13 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
-    @line_item.destroy
+    @line_item.quantity -=1
+    @line_item.save!
+    @line_item.destroy if @line_item.quantity == 0
+    @cart = @line_item.cart
     respond_to do |format|
-      format.html { redirect_to @line_item.cart, notice: "Product #{@line_item.product.title} was removed from cart" }
+      format.html { redirect_to store_index_url, notice: "Product #{@line_item.product.title} was removed from cart"}
+      format.js { @current_item = @line_item }
       format.json { head :no_content }
     end
   end

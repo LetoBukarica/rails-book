@@ -59,3 +59,17 @@
     }
   }
 }
+
+@keyframes row-highlight {
+  0% {
+    background: #5f8;
+  }
+
+  100% {
+    background: none;
+  }
+}
+
+.product-highlight {
+  animation: row-highlight 2s;
+}
