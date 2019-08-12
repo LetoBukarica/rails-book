@@ -6,28 +6,36 @@
   table {
     border-collapse: collapse;
   }
+
   td {
     padding: 0.5em;
   }
+
   td.quantity {
     white-space: nowrap;
   }
+
   td.quantity::after {
     content: " x";
   }
+
   td.price {
     font-weight: bold;
     text-align: right;
   }
+
   tfoot {
-    th, td.price {
+    td.price,
+    th {
       font-weight: bold;
       padding-top: 1em;
     }
+
     th {
       text-align: right;
     }
-    td.price{
+
+    td.price {
       border-top: solid thin;
     }
   }
@@ -43,5 +51,18 @@
 
   input[type="submit"]:hover {
     background-color: #992;
+  }
+
+  input.checkout {
+    background-color: #bfb;
+    color: black;
+  }
+  input.checkout:hover {
+    background-color: #9d9;    
+  }
+
+
+  .actions form {
+    display: inline;
   }
 }

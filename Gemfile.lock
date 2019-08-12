@@ -29,6 +29,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.1.7)
       activesupport (= 5.1.7)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.1.7)
       activemodel (= 5.1.7)
       activesupport (= 5.1.7)
@@ -174,6 +178,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel-serializers-xml
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
@@ -192,4 +197,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
