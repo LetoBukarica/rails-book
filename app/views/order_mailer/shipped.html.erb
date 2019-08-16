@@ -1,0 +1,17 @@
+<h3>Pragmatic Order Shipped</h3>
+
+<p>
+  This s just to let you know that we've shipped your recent order:
+</p>
+
+<table>
+  <tr><th colspan="2">Qty</th><th>Description</th></tr>
+  <% @order.line_items.each do |line_item| %>
+  <tr>
+    <td class="quantity"><%= line_item.quantity %></td>
+    <td><%= line_item.product.title %></td>
+    <td class="price"><%= number_to_currency(line_item.total_price) %></td>
+  </tr>
+  <% end %>
+
+</table>

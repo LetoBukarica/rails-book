@@ -4,7 +4,10 @@ one:
   product: two
   cart: one
   price: 20.01
+  quantity: 1
 
 two:
   product: ruby
   order: one
+  price: 11.11
+  quantity: 1

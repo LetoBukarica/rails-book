@@ -64,3 +64,7 @@ config.webpacker.check_yarn_integrity = true
 
   config.web_console.whitelisted_ips = '10.0.0.0/8'
 end
+
+Depot::Application.configure do
+  config.action_mailer.delivery_method = :test
+end
