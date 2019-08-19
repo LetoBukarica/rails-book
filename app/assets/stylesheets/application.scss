@@ -99,6 +99,27 @@ header.main {
   padding: 0.5em;
  }
 
+ nav.logged_in_nav {
+   border-top: solid thin #bfb;
+   padding: 0.354em 0;
+   margin-top: 0.354em;
+   
+   input[type="submit"] {
+     //Make button look like a link
+     background: none;
+     border: none;
+     color: #bfb;
+     font-size: 1em;
+     letter-spacing: 0.354em;
+     margin: 0;
+     padding: 0;
+     text-transform: uppercase;
+   }
+   input[type="submit"]:hover {
+     color: white;
+   }
+ }
+
  #cart {
    article {
      h2 {

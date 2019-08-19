@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  skip_before_action :authorize, only: [:create, :update, :destroy]
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   helper_method :set_cart_session
@@ -64,7 +65,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to store_index_url, notice: 'Your cart is empty.' }
-      format.js 
+      format.js
       format.json { head :no_content }
     end
   end

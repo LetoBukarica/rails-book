@@ -2,9 +2,11 @@
 
 class StoreController < ApplicationController
   include CurrentCart
+  skip_before_action :authorize  
   before_action :set_cart
 
-  def index    
+
+  def index
     @products = Product.order(:title)
     if [0, nil].include?(session[:access_counter])
       session[:access_counter] = 1
