@@ -1,0 +1,50 @@
+sr:
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%n&nbsp;%u"
+    activerecord:
+      errors:
+        messages:
+          inclusion: "Morate izabrati element iz liste"
+          blank: "Ne sme da bude prazno"
+    errors:
+      template:
+        body: "Postoje problemi pri kreiranju narudžbine"
+        header:
+          one: "1 greška pri snimanju %{model}"
+          other: "%{count} grešaka pri snimanju %{model}"
+  layouts:
+    application:
+      title: "Knjižara"
+      home: "Početak"
+      questions: "Pitanja"
+      news: "Vesti"
+      contact: "Kontakt"
+  store:
+    index:
+      title_html: "Pragmatični Katalog"
+      add_html: "Dodaj"
+  carts:
+    cart:
+      title: "Korpa"
+      empty: 'Isprazni'
+      checkout: "Kupovina"
+  orders:
+    new:
+      legend: "Unesite vaše detalje"
+    form:
+      name: 'Ime'
+      address: "Adresa"
+      email: "Email"
+      submit: 'Pošalji Narudžbinu'
+      pay_type: 'Način plaćanja'
+      pay_prompt_html: "Izaberite način plaćanja"
+      pay_types:
+        check: "Ček"
+        credit_card: "Kreditna kartica"
+        purchase_order: "Narudžbina"
